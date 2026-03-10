@@ -47,10 +47,6 @@ Or follow the [uv installation guide](https://docs.astral.sh/uv/getting-started/
 
 ### Step 1: Clone or Download the Repository
 
-```bash
-cd agentcore-crash-course
-```
-
 ### Step 2: Install Dependencies
 
 #### Option A: Using uv with pyproject.toml (Recommended)
