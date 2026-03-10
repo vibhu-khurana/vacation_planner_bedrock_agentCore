@@ -1,0 +1,106 @@
+default_agent: agent_with_memory
+agents:
+  agentcore_lang_runtime:
+    name: agentcore_lang_runtime
+    entrypoint: /Users/vibhukhurana/chatbot_agentcore/01_agentcore_runtime.py
+    deployment_type: container
+    runtime_type: null
+    platform: linux/arm64
+    container_runtime: none
+    source_path: /Users/vibhukhurana/chatbot_agentcore
+    aws:
+      execution_role: arn:aws:iam::491799436090:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-c980c3716d
+      execution_role_auto_create: false
+      account: '491799436090'
+      region: us-east-1
+      ecr_repository: 491799436090.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-agentcore_lang_runtime
+      ecr_auto_create: false
+      s3_path: null
+      s3_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+        network_mode_config: null
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+      lifecycle_configuration:
+        idle_runtime_session_timeout: null
+        max_lifetime: null
+    bedrock_agentcore:
+      agent_id: agentcore_lang_runtime-FC4j86BiCH
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:491799436090:runtime/agentcore_lang_runtime-FC4j86BiCH
+      agent_session_id: 5739dd3e-81a5-436d-9173-ddf896a60604
+    codebuild:
+      project_name: bedrock-agentcore-agentcore_lang_runtime-builder
+      execution_role: arn:aws:iam::491799436090:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-c980c3716d
+      source_bucket: bedrock-agentcore-codebuild-sources-491799436090-us-east-1
+    memory:
+      mode: NO_MEMORY
+      memory_id: null
+      memory_arn: null
+      memory_name: null
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+      was_created_by_toolkit: false
+    identity:
+      credential_providers: []
+      workload: null
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
+    api_key_env_var_name: null
+    api_key_credential_provider_name: null
+    is_generated_by_agentcore_create: false
+  agent_with_memory:
+    name: agent_with_memory
+    entrypoint: /Users/vibhukhurana/chatbot_agentcore/02_agentcore_memory.py
+    deployment_type: container
+    runtime_type: null
+    platform: linux/arm64
+    container_runtime: none
+    source_path: /Users/vibhukhurana/chatbot_agentcore
+    aws:
+      execution_role: arn:aws:iam::491799436090:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-f3cb8b6d58
+      execution_role_auto_create: false
+      account: '491799436090'
+      region: us-east-1
+      ecr_repository: 491799436090.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-agent_with_memory
+      ecr_auto_create: false
+      s3_path: null
+      s3_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+        network_mode_config: null
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+      lifecycle_configuration:
+        idle_runtime_session_timeout: null
+        max_lifetime: null
+    bedrock_agentcore:
+      agent_id: agent_with_memory-6hrEYy9LlO
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:491799436090:runtime/agent_with_memory-6hrEYy9LlO
+      agent_session_id: 18d35bdc-7eb2-4a48-872c-f458885ad6c9
+    codebuild:
+      project_name: bedrock-agentcore-agent_with_memory-builder
+      execution_role: arn:aws:iam::491799436090:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-f3cb8b6d58
+      source_bucket: bedrock-agentcore-codebuild-sources-491799436090-us-east-1
+    memory:
+      mode: STM_AND_LTM
+      memory_id: customer_care_agent_memory-b4nXFYAqt4
+      memory_arn: null
+      memory_name: agent_with_memory_memory
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+      was_created_by_toolkit: false
+    identity:
+      credential_providers: []
+      workload: null
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
+    api_key_env_var_name: null
+    api_key_credential_provider_name: null
+    is_generated_by_agentcore_create: false
